@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react'
 import {Button} from '@material-ui/core'
-
+import {object,func} from 'prop-types'
 
 const Counter = ({layout, buttonStyle}) => {
     const [count,setCount] = useState(0); 
@@ -17,6 +17,11 @@ const Counter = ({layout, buttonStyle}) => {
             <Button onClick={subtractCount} variant="outlined" style={buttonStyle(color)}>-</Button>
         </div>
     );
+}
+
+Counter.propTypes = {
+    layout:object,
+    buttonStyle:func
 }
 
 const layout = {
